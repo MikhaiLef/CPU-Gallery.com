@@ -1,0 +1,236 @@
+/* Windows 11 стиль - адаптировано для IE11 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f0f0;
+    background: -webkit-linear-gradient(135deg, #f0f0f0, #e6e6e6);
+    background: -o-linear-gradient(135deg, #f0f0f0, #e6e6e6);
+    background: linear-gradient(135deg, #f0f0f0, #e6e6e6);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+}
+
+/* Панель задач Windows 11 */
+.taskbar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF, endColorstr=#CCFFFFFF)";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#CCFFFFFF, endColorstr=#CCFFFFFF);
+    height: 48px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-bottom: 1px solid #ffffff50;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.startmenu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    color: #1e1e1e;
+}
+
+.win-icon {
+    font-size: 14px;
+    transform: rotate(180deg);
+    display: inline-block;
+}
+
+.taskbar-icons span {
+    margin: 0 10px;
+    color: #1e1e1e;
+    font-size: 16px;
+    cursor: default;
+    opacity: 0.8;
+}
+
+.taskbar-time {
+    color: #1e1e1e;
+    font-weight: 500;
+}
+
+/* Основной рабочий стол */
+.desktop {
+    max-width: 1300px;
+    margin: 30px auto 80px auto;
+    padding: 0 20px;
+    -ms-flex: 1;
+    flex: 1;
+    width: 100%;
+}
+
+/* Заголовок галереи */
+.gallery-header {
+    margin-bottom: 30px;
+}
+
+.gallery-header h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1e1e1e;
+    letter-spacing: -0.5px;
+}
+
+.sub {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin-top: 5px;
+}
+
+/* Сетка процессоров */
+.cpu-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+/* Карточка процессора */
+.cpu-card {
+    background: #ffffff;
+    border-radius: 12px; /* скругление у карточки остается (стиль Windows 11) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px 16px 16px 16px;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: 1px solid #f0f0f0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+}
+
+.cpu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    border-color: #d0d0d0;
+    background: #fafafa;
+}
+
+/* Контейнер для BMP изображения - БЕЗ СКРУГЛЕНИЙ */
+.cpu-image {
+    width: 120px;
+    height: 120px;
+    background: #f5f5f5;
+    margin-bottom: 16px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+    /* Убираем border-radius полностью */
+    border-radius: 0;
+}
+
+/* Стиль для BMP изображений */
+.cpu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Убираем скругление у картинок */
+    border-radius: 0;
+}
+
+/* Название процессора */
+.cpu-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e1e1e;
+    margin-bottom: 6px;
+}
+
+.cpu-spec {
+    font-size: 14px;
+    color: #5a5a5a;
+    margin-bottom: 12px;
+}
+
+/* Кнопка */
+.details-btn {
+    background: #0078d4;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: default;
+    box-shadow: 0 2px 6px rgba(0, 120, 212, 0.3);
+    transition: background 0.1s;
+    width: fit-content;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+.details-btn:hover {
+    background: #005a9e;
+}
+
+/* Статусная строка */
+.status-bar {
+    background: #ffffffc0;
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
+    border-radius: 30px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 15px;
+    color: #2d2d2d;
+    border: 1px solid #dadada;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+/* Адаптивность */
+@media (max-width: 1000px) {
+    .cpu-grid {
+        -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .cpu-grid {
+        -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .cpu-grid {
+        -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
